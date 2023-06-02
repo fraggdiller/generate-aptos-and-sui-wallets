@@ -1,3 +1,4 @@
 openpyxl~=3.1.2
 mnemonic~=0.20
 ecdsa~=0.18.0
+aptos_sdk~=0.6.1
