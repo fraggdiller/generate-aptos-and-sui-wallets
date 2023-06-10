@@ -18,7 +18,7 @@ def generate_sui_address(public_key: PublicKey, signature_flag: int) -> str:
 
 def get_sui_wallet_info(seed_phrases):
     wallet_info = []
-    signature_flag = 0x00  # Флаг схемы подписи для Ed25519
+    signature_flag = 0x00
 
     for seed_phrase in seed_phrases:
         pt_seed = PublicKeyUtils(seed_phrase)
@@ -30,7 +30,6 @@ def get_sui_wallet_info(seed_phrases):
         wallet_info.append({
             'Seed Phrase': seed_phrase,
             'Address': address,
-            'Public Key': public_key,
             'Private Key': private_key
         })
 

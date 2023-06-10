@@ -1,4 +1,3 @@
-# coding=utf-8
 import hashlib, hmac, struct
 from ecdsa.curves import Ed25519
 
