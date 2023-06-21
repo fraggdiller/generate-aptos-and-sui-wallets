@@ -17,7 +17,7 @@ class PublicKey25519:
         return '\x00' + sk.get_verifying_key().to_bytes()
 
 
-class PublicKeyUtils():
+class PublicKeyUtils:
 
     def __init__(self, words, str_derivation_path=APTOS_DERIVATION_PATH, curve=Ed25519, modifier=BIP32_SEED_ED25519):
         self.privdev = BIP32_PRIVDEV
@@ -44,7 +44,8 @@ class PublicKeyUtils():
 
         return key, chain_code
 
-    def mnemonic_to_bip39seed(self, mnemonic, passphrase):
+    @staticmethod
+    def mnemonic_to_bip39seed(mnemonic, passphrase):
         mnemonic = bytes(mnemonic, 'utf8')
         salt = bytes(BIP39_SALT_MODIFIER + passphrase, 'utf8')
         return hashlib.pbkdf2_hmac('sha512', mnemonic, salt, BIP39_PBKDF2_ROUNDS)
